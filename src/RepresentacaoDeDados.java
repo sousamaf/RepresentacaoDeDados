@@ -7,24 +7,15 @@ public class RepresentacaoDeDados
 
 	static Scanner leitor = new Scanner(System.in);
 	
-	public static void main(String[] args)
+	public static void main(String[] args) throws InterruptedException
 	{
 		int opcaoEntrada = -1; 
-		iValor[0] = 1;
-		iValor[1] = 1;
-		iValor[2] = 1;
-		iValor[3] = 1;
-		iValor[4] = 0;
-		iValor[5] = 1;
-		iValor[6] = 1;
-		iValor[7] = 0;
-		
+
 		while(opcaoEntrada != 0)
 		{
-			//Scanner l = new Scanner(System.in);
 			menu();
 			opcaoEntrada = Integer.parseInt(leitor.nextLine());
-			
+
 			if(opcaoEntrada == 1) // Entrada de dados binário
 			{
 				entradaDeDadosBinarios();
@@ -34,6 +25,7 @@ public class RepresentacaoDeDados
 			} else if(opcaoEntrada == 3) // converte para decimal
 			{
 				converterParaDecimal();
+				esperar();
 			}
 		}
 		/*
@@ -45,11 +37,6 @@ public class RepresentacaoDeDados
 		*/
 	}
 	
-	private static void entradaDeDadosDecimal() {
-		// TODO Auto-generated method stub
-		
-	}
-
 	public static void menu()
 	{
 		System.out.println(" ++++++ Conversor binário ++++++\n\n");
@@ -67,27 +54,37 @@ public class RepresentacaoDeDados
 		System.out.println("\t0 para sair.");
 		System.out.print(">> ");
 	}
-	
+
+	public static void esperar()
+	{
+		System.out.println("ENTER para seguir.");
+		leitor.nextLine();
+	}
 	public static void entradaDeDadosBinarios()
 	{
 		// TODO Verificar a consistência dos dado inserido pelo usuário. 
 		// Por exemplo, informar somente binário em 8 bits. 
 		//Scanner leitor = new Scanner(System.in);
 		String sEntrada = new String();
-		int i = 0; 
+		int i = 0;
+		int pos = 7;
 		
 		System.out.print("Digite 8 bits: ");
 		sEntrada = leitor.nextLine();
 
 		for(i = 0; i < sEntrada.length(); i++)
 		{
-			iValor[i] = Integer.parseInt(sEntrada.substring(i, i+1));
-			System.out.println(iValor[i]);
+			iValor[pos] = Integer.parseInt(sEntrada.substring(i, i+1));
+			pos--;
 		}
-		
-		//leitor.close();
 	}
-	
+
+	private static void entradaDeDadosDecimal()
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
 	public static void converterParaDecimalDePontoFlutuante()
 	{
 		int[] iValorTemp = new int[3];
