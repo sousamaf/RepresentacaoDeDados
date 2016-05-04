@@ -26,6 +26,34 @@ public class RepresentacaoDeDados
 			{
 				converterParaDecimal();
 				esperar();
+			} else if(opcaoEntrada == 4) // converte para decimal
+			{
+				converterParaDecimalDeSM();
+				esperar();
+			} else if(opcaoEntrada == 5) // converte para decimal
+			{
+				converterParaDecimalDeExcesso127();
+				esperar();
+			} else if(opcaoEntrada == 6) // converte para decimal
+			{
+				converterParaDecimalDeComplemento2();
+				esperar();
+			} else if(opcaoEntrada == 7) // converte para BCD8421
+			{
+				converterParaDecimal();
+				esperar();
+			} else if(opcaoEntrada == 8) // converte para SM
+			{
+				converterParaDecimal();
+				esperar();
+			} else if(opcaoEntrada == 9) // converte para Excesso127
+			{
+				converterParaDecimal();
+				esperar();
+			} else if(opcaoEntrada == 10) // converte para C2
+			{
+				converterParaDecimal();
+				esperar();
 			}
 		}
 		/*
